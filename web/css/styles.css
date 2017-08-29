@@ -1,0 +1,27 @@
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bg-dark {
+  font-size:19px;
+  background-color: #424242;
+}
+
+.panel {
+  background-color: #353436;
+}
+
+.active{
+  background-color: #A9D0F5;   
+}
+
+#editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.modal-backdrop { opacity:0.1 !important; background-color: #A9D0F5 }

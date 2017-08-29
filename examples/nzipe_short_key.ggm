@@ -1,0 +1,17 @@
+params e1,e3,e5 in Zp; e2,e4,e6 in Zp^n.
+params x,y in Zp^n.
+vars s,r,a,u in Zp; w in Zp^n.
+
+(*
+c = s*(u*x+w)
+k := (r*w^T*y, r*u+a)
+*)
+
+(s*e1 + s*(u*x+w)^T*e2) * r  +
+(s*e3 + s*(u*x+w)^T*e4) * (r*w^T*y)  +
+(s*e5 + s*(u*x+w)^T*e6) * (r*u+a)  = a*s /\
+
+x^T*y = 0.
+
+go.
+contradiction.

@@ -1,0 +1,21 @@
+params e1 in Zp; e2,e3 in Zp^n; E4 in Zp^(n,n).
+params x in {0,1}^n; M1 in Zp^n; M in Zp^(n,k).
+params c in Zp^k.
+vars s,r,a in Zp; w in Zp^n; u in Zp^k.
+
+(*
+c = s*diag(x)*w
+k := r*(w+M*u)+M*a
+*)
+
+(s*e1 + s*(diag(x)*w)^T*e2) * r +
+(s*e3^T + s*(diag(x)*w)^T*E4) * (r*(w+M*u)+M1*a) = a*s /\
+
+(* (1,0---0) is not in row_span(M1|M)_x  *)
+diag(x)*M1 + diag(x)*M*c = 0.
+
+go.
+(* We add a new equation, (5) + e2^T*(6) *)
+add_equation (e2^T*diag(x)*M1 + 1) + e2^T*diag(x)*(M1+M*c) = 0.
+go.
+contradiction.

@@ -1,0 +1,13 @@
+vars A,S,S1,S2,S3,B in Zp.
+params c1,c2,c3,c4,c5,c6,c7,c8 in Zp.
+
+(c1*(S1*(B+1))*A + 
+ c3*(S2*(B+2))*A + 
+ c5*(S-S1)*A + 
+ c7*(S-S2)*A)/(B+3) + 
+c4*(S2*(B+2))*A + 
+c2*(S1*(B+1))*A +
+c6*(S-S1)*A +
+c8*(S-S2)*A = A*S.
+
+go.

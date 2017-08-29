@@ -1,0 +1,21 @@
+params e1,e2,e5,e6 in Zp.
+params e3,e4 in Zp^l.
+params x in Zp^n; Y in Zp^(n,l); z in Zp^n.
+vars s,r,a,u in Zp; w in Zp^n.
+
+(*
+c = s*(u+w^T*x)
+k := (r*Y^T*w, r*u+a)
+*)
+
+(s*e1 + (s*(u+w^T*x))*e2) * r +
+(s*e3^T + (s*(u+w^T*x))*e4^T) * (r*Y^T*w) +
+(s*e5 + (s*(u+w^T*x))*e6) * (r*u+a)
+= a*s /\
+
+(* x is not in span(Y)  *)
+z^T*x = 1 /\
+z^T*Y = 0.
+
+go.
+contradiction.

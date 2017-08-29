@@ -1,0 +1,32 @@
+params x1,x2,x3 in {0,1}.
+params m1,m2,m3,m4,m5,m6,m7,m8,m9 in Zp.
+params c1,c2,c3,c4,c5,c6,c7,c8,c9 in Zp.
+params c10,c11,c12,c13,c14,c15,c16 in Zp.
+vars s,a,r,b1,b2,b3 in Zp; u1,u2 in Zp.
+
+params z1,z2 in Zp.
+
+c1*(x1*r/b1)*(m1*s+m4*u1+m7*u2)*b1 +
+c2*(x1*r/b1)*(m2*s+m5*u1+m8*u2)*b2 +
+c3*(x1*r/b1)*(m3*s+m6*u1+m9*u2)*b3 +
+c4*(x2*r/b2)*(m1*s+m4*u1+m7*u2)*b1 +
+c5*(x2*r/b2)*(m2*s+m5*u1+m8*u2)*b2 +
+c6*(x2*r/b2)*(m3*s+m6*u1+m9*u2)*b3 +
+c7*(x3*r/b3)*(m1*s+m4*u1+m7*u2)*b1 +
+c8*(x3*r/b3)*(m2*s+m5*u1+m8*u2)*b2 +
+c9*(x3*r/b3)*(m3*s+m6*u1+m9*u2)*b3 +
+c10*(a-r)*(m1*s+m4*u1+m7*u2)*b1 +
+c11*(a-r)*(m2*s+m5*u1+m8*u2)*b2 +
+c12*(a-r)*(m3*s+m6*u1+m9*u2)*b3 +
+c13*(x1*r/b1)*s +
+c14*(x2*r/b2)*s +
+c15*(x3*r/b3)*s + 
+c16*(a-r)*s
+= a*s  /\
+
+x1*(m1+m4*z1+m7*z2) = 0 /\
+x2*(m2+m5*z1+m8*z2) = 0 /\
+x3*(m3+m6*z1+m9*z2) = 0.
+
+go.
+contradiction.

@@ -1,0 +1,21 @@
+params e1,e3 in Zp; e2,e4 in Zp^n; e5 in Zp^l; E6 in Zp^(n,l).
+params x in {0,1}^n; M1 in Zp^n; M in Zp^(n,l).
+params b in Zp^n.
+vars s,r,a,u in Zp; w in Zp^n.
+
+(*
+c = s*(w-X*w)
+k := (r*M1^T*w+a, r*M^T*w)
+*)
+
+(s*e1 + (s*(w-diag(x)*w))^T*e2) * r +
+(s*e3 + (s*(w-diag(x)*w))^T*e4) * (r*M1^T*w+a) +
+(s*e5^T + (s*(w-diag(x)*w))^T*E6) * (r*M^T*w)
+= a*s /\
+
+(* (1,0---0) is in row_span(M1|M)_x  *)
+1 = b^T*diag(x)*M1 /\
+0 = b^T*diag(x)*M.
+
+go.
+contradiction.

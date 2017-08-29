@@ -1,0 +1,19 @@
+params e1,e3,e7,e9 in Zp; e2,e8 in Zp^l; e4,e6 in Zp^m; E5 in Zp^(l,m).
+params x in Zp^n; X in Zp^(n,l); Y in Zp^(n,m).
+params z in Zp^n.
+vars s,r,a,u in Zp; w in Zp^n.
+
+(*
+c = (s*w^T*X, s*(u+w^T*x))
+k := (r*w^T*Y, r*u+a)
+*)
+
+(s*e1 + (s*w^T*X)*e2 + s*(u+w^T*x)*e3) * r +
+(s*e4^T + (s*w^T*X)*E5 + s*(u+w^T*x)*e6^T) * (r*w^T*Y)^T +
+(s*e7 + (s*w^T*X)*e8 + s*(u+w^T*x)*e9) * (r*u+a) = a*s /\
+
+(* x + span(X) and span(Y) are disjoint *)
+z^T*X = 0 /\ z^T*Y = 0 /\ z^T*x = 1.
+
+go.
+contradiction.

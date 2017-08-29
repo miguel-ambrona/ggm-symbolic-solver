@@ -1,0 +1,9 @@
+params x, y, e1, e2, e3, e4 in Zp.
+vars B1, B2, R, A, S in Zp.
+
+x <> y /\
+e1*S*(A + R*(B1+y*B2)) + e2*S*(B1+x*B2)*R +
+e3*S*R + e4*S*(B1+x*B2)*(A + R*(B1+y*B2)) = A*S.
+
+go.
+contradiction.

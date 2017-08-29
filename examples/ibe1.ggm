@@ -1,0 +1,10 @@
+sets Q[q].
+
+params forall i in Q: x, e_i, y_i in Zp.
+vars B, A, S in Zp.
+
+forall i in Q: x <> y_i /\
+sum(i in Q: S*(B+x)*e_i*A/(B+y_i)) = A*S.
+
+go.
+contradiction.

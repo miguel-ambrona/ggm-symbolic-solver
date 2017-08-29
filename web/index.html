@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>GGMSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="imported/katex/katex.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body class="body bg-dark">
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="imported/katex/katex.js"></script>
+    <script type="text/javascript" src="imported/ace-builds/src-noconflict/ace.js" charset="utf-8"></script>
+
+
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 id="modal-title" class="modal-title"></h2>
+          </div>
+          <div id="modalBody" class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="container" class="container-full" style="overflow: hidden;">
+      <div class="container-fluid" style="margin-top: 30px">
+        
+        <div id="editor-div" class="col-xs-12 col-sm-4">
+          <div id="editor" style="font-size:17px"></div>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <div id="outputs-div" class="panel" style="overflow:auto">
+            <div class="btn-group pull-right" role="group">
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" style="background-color: #262424; color: #F3FCFF">
+                Menu
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a id="openBtn" href="#" data-toggle="modal" data-target="#Modal" onClick="showFiles();">Open</a></li>
+                <li><a id="helpBtn" href="#" data-toggle="modal" data-target="#Modal" onClick="showHelp();">Help</a></li>
+              </ul>
+            </div>
+            <div id="vars-and-params" class="col-xs-12" style="color: white; margin:30px; width: 95%; overflow: auto"></div>
+            <div id="resultsbox" class="col-xs-12"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/configure_ace.js" charset="utf-8"></script>
+    
+  </body>
+</html>

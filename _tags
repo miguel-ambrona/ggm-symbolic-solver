@@ -1,0 +1,6 @@
+true: bin_annot, debug
+
+<src>: include
+<src/Util> or <src/Test>: include
+
+<src/*>: package(core_kernel), package(yojson)

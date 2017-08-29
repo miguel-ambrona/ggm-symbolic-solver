@@ -1,0 +1,23 @@
+params x1,x2 in {0,1}.
+params m1,m2 in Zp; m3,m4 in Zp.
+params c1,c2,c3,c4,c5,c6,c7,c8,c9 in Zp.
+vars s,a,r,b1,b2 in Zp; u in Zp.
+
+params z in Zp.
+
+c1*(x1*r/b1)*(m1*s+m3^T*u)*b1 +
+c2*(x1*r/b1)*(m2*s+m4^T*u)*b2 +
+c3*(x2*r/b2)*(m1*s+m3^T*u)*b1 +
+c4*(x2*r/b2)*(m2*s+m4^T*u)*b2 +
+c5*(x1*r/b1)*s +
+c6*(x2*r/b2)*s +
+c7*(a-r)*(m1*s+m3^T*u)*b1 +
+c8*(a-r)*(m2*s+m4^T*u)*b2 +
+c9*(a-r)*s
+= a*s  /\
+
+x1*m1 + x1*m3^T*z = 0  /\
+x2*m2 + x2*m4^T*z = 0.
+
+go.
+contradiction.

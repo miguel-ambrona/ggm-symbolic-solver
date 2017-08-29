@@ -1,0 +1,9 @@
+params x, y, e2,e4 in Zp^n; z, e1,e3 in Zp.
+vars V in Zp^n; U, R, A, S in Zp.
+
+x^T*y <> z /\
+e1*S*(A + R*(U*z+V^T*y)) + S*(U*x+V)^T*e2*R +
+e3*S*R + S*(U*x+V)^T*e4*(A + R*(U*z+V^T*y)) = A*S.
+
+go.
+contradiction.

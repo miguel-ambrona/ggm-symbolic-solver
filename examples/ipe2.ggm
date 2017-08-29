@@ -1,0 +1,10 @@
+sets Q[q].
+
+params forall i in Q: x, y_i, e_i in Zp^n; z in Zp.
+vars B in Zp^n; A, S in Zp.
+
+forall i in Q: x^T*y_i <> z /\
+sum(i in Q: S*(x+B)^T*e_i*A/(z+B^T*y_i)) = A*S.
+
+go.
+contradiction.
