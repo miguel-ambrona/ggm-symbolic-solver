@@ -13,5 +13,6 @@ install: [make "install"]
 depends: [
   "core_kernel"  {build}
   "yojson"       {build}
+  "menhir"       {build}
 ]
 available: [ocaml-version >= "4.02.0"]
