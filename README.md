@@ -2,6 +2,9 @@
 
 This solver allows to analyze symbolic experiments to prove security of cryptographic constructions in the generic group model.
 
+This tool has been developed as part of the work *Attribute-Based Encryption in the Generic Group Model: Automated Proofs and New Constructions*, published at the ACM Conference on Computer and Communications Security 2017.
+We refer to our paper [https://eprint.iacr.org/2017/983](https://eprint.iacr.org/2017/983) for more details.
+
 ## Installation
 
 *1*. Install [Opam](https://opam.ocaml.org/).
